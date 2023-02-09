@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="styles.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container-xl">
+        <h1>Time Sheet Calculator</h1>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Day</th>
+                <th scope="col">Starting Time</th>
+                <th scope="col">Ending Time</th>
+                <th scope="col">Break Deduction</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="monday">
+                <th scope="row">Monday</th>
+                <td>
+                    <input id="start-hour-1" type='text' value="8" style="width:30px;"> : <input id="start-minute-1" value="00" type='text' style="width:30px;"> 
+                    <select name="AM/PM" id="start-break-1" style="width: 50px; height: 30px; margin-left: 4px;">
+                        <option value="0" selected>AM</option>
+                        <option value="1">PM</option>
+                      </select>
+                </td>
+                <td>
+                    <input id="end-hour-1"  type='text' value="5" style="width:30px;"> : <input id="end-minute-1" value="00" type='text' style="width:30px;"> 
+                    <select name="AM/PM" id="end-break-1" style="width: 50px; height: 30px; margin-left: 4px;">
+                        <option value="0">AM</option>
+                        <option value="1" selected>PM</option>
+                      </select>
+                </td>
+                <td>
+                    <input id="minus-hour-1" value="2" type='text' style="width:30px;"> : <input id="minus-minute-1" value="00" type='text' style="width:30px; align-self: center;"> 
+                </td>
+                <td id="total-1"></td>
+              </tr>
+              <tr>
+                <th scope="row">Tuesday</th>
+                <td>
+                    <input id="start-hour-2" type='text' value="8" style="width:30px;"> : <input id="start-minute-2" value="00" type='text' style="width:30px;"> 
+                    <select name="AM/PM" id="start-break-2" style="width: 50px; height: 30px; margin-left: 4px;">
+                        <option value="0" selected>AM</option>
+                        <option value="1">PM</option>
+                      </select>
+                </td>
+                <td>
+                    <input id="end-hour-2" value="6" type='text' style="width:30px;"> : <input id="end-minute-2" value="00" type='text' style="width:30px;"> 
+                    <select name="AM/PM" id="end-break-2" style="width: 50px; height: 30px; margin-left: 4px;">
+                        <option value="0">AM</option>
+                        <option value="1" selected>PM</option>
+                      </select>
+                </td>
+                <td>
+                    <input id="minus-hour-2" value="4" type='text' style="width:30px;"> : <input id="minus-minute-2" value="00" type='text' style="width:30px; align-self: center;"> 
+                </td>
+                <td id="total-2"></td>
+              </tr>
+              <tr>
+                <th scope="row">Wednesday</th>
+                <td>
+                    <input id="start-hour-3" type='text' value="8" style="width:30px;"> : <input id="start-minute-3" value="00" type='text' style="width:30px;"> 
+                    <select name="AM/PM" id="start-break-3" style="width: 50px; height: 30px; margin-left: 4px;">
+                        <option value="0" selected>AM</option>
+                        <option value="1">PM</option>
+                      </select>
+                </td>
+                <td>
+                    <input id="end-hour-3" value="7" type='text' style="width:30px;"> : <input id="end-minute-3" value="00" type='text' style="width:30px;"> 
+                    <select name="AM/PM" id="end-break-3" style="width: 50px; height: 30px; margin-left: 4px;">
+                        <option value="0">AM</option>
+                        <option value="1" selected>PM</option>
+                      </select>
+                </td>
+                <td>
+                    <input id="minus-hour-3" value="5" type='text' style="width:30px;"> : <input id="minus-minute-3" value="00" type='text' style="width:30px; align-self: center;"> 
+                </td>
+                <td id="total-3"></td>
+              </tr>
+              <tr>
+                <th scope="row">Thursday</th>
+                <td>
+                    <input id="start-hour-4"  type='text' value="8" style="width:30px;"> : <input id="start-minute-4" value="00" type='text' style="width:30px;"> 
+                    <select name="AM/PM" id="start-break-4" style="width: 50px; height: 30px; margin-left: 4px;">
+                        <option value="0" selected>AM</option>
+                        <option value="1">PM</option>
+                      </select>
+                </td>
+                <td>
+                    <input id="end-hour-4" value="8" type='text' style="width:30px;"> : <input id="end-minute-4" value="00" type='text' style="width:30px;"> 
+                    <select name="AM/PM" id="end-break-4" style="width: 50px; height: 30px; margin-left: 4px;">
+                        <option value="0">AM</option>
+                        <option value="1" selected>PM</option>
+                      </select>
+                </td>
+                <td>
+                    <input id="minus-hour-4" value="1" type='text' style="width:30px;"> : <input id="minus-minute-4" value="00" type='text' style="width:30px; align-self: center;"> 
+                </td>
+                <td id="total-4"></td>
+              </tr>
+              <tr>
+                <th scope="row">Friday</th>
+                <td>
+                    <input id="start-hour-5" type='text' value="8" style="width:30px;"> : <input id="start-minute-5" value="00" type='text' style="width:30px;"> 
+                    <select name="AM/PM" id="start-break-5" style="width: 50px; height: 30px; margin-left: 4px;">
+                        <option value="0" selected>AM</option>
+                        <option value="1">PM</option>
+                      </select>
+                </td>
+                <td>
+                    <input id="end-hour-5" value="9" type='text' style="width:30px;"> : <input id="end-minute-5" value="00" type='text' style="width:30px;"> 
+                    <select name="AM/PM" id="end-break-5" style="width: 50px; height: 30px; margin-left: 4px;">
+                        <option value="0">AM</option>
+                        <option value="1" selected>PM</option>
+                      </select>
+                </td>
+                <td>
+                    <input id="minus-hour-5" value="2" type='text' style="width:30px;"> : <input id="minus-minute-5" value="00" type='text' style="width:30px; align-self: center;"> 
+                </td>
+                <td id="total-5"></td>
+              </tr>
+              <tr>
+                <th scope="row">Saturday</th>
+                <td>
+                    <input id="start-hour-6" type='text' value="8" style="width:30px;"> : <input id="start-minute-6" value="00" type='text' style="width:30px;"> 
+                    <select name="AM/PM" id="start-break-6" style="width: 50px; height: 30px; margin-left: 4px;">
+                        <option value="0" selected>AM</option>
+                        <option value="1">PM</option>
+                      </select>
+                </td>
+                <td>
+                    <input id="end-hour-6" value="10" type='text' style="width:30px;"> : <input id="end-minute-6" value="00" type='text' style="width:30px;"> 
+                    <select name="AM/PM" id="end-break-6" style="width: 50px; height: 30px; margin-left: 4px;">
+                        <option value="0">AM</option>
+                        <option value="1" selected>PM</option>
+                      </select>
+                </td>
+                <td>
+                    <input id="minus-hour-6" value="3" type='text' style="width:30px;"> : <input id="minus-minute-6" value="00" type='text' style="width:30px; align-self: center;"> 
+                </td>
+                <td id="total-6"></td>
+              </tr>
+              <tr>
+                <th scope="row">Sunday</th>
+                <td>
+                    <input id="start-hour-7" type='text' value="8" style="width:30px;"> : <input id="start-minute-7" value="00" type='text' style="width:30px;"> 
+                    <select name="AM/PM" id="start-break-7" style="width: 50px; height: 30px; margin-left: 4px;">
+                        <option value="0" selected>AM</option>
+                        <option value="1">PM</option>
+                      </select>
+                </td>
+                <td>
+                    <input id="end-hour-7" value="11" type='text' style="width:30px;"> : <input id="end-minute-7" value="00" type='text' style="width:30px;"> 
+                    <select name="AM/PM" id="end-break-7" style="width: 50px; height: 30px; margin-left: 4px;">
+                        <option value="0">AM</option>
+                        <option value="1" selected>PM</option>
+                      </select>
+                </td>
+                <td>
+                    <input id="minus-hour-7" value="4" type='text' style="width:30px;"> : <input id="minus-minute-7" value="00" type='text' style="width:30px; align-self: center;"> 
+                </td>
+                <td id="total-7"></td>
+              </tr>
+              <tr>
+                <th scope="row" style="font-size: 12px;">codeBeautify_myVersion</th>
+                <td>
+                    
+                </td>
+                <td>
+                    <button type="button" class="btn btn-dark btn-sm" onclick="calculate()">Calculate</button>
+                    <button type="button" class="btn btn-dark btn-sm" onclick="clearAll()">Clear</button>
+                </td>
+                <td>
+                    Total Hours:
+                </td>
+                <td id="answer"></td>
+              </tr>
+            </tbody>
+          </table>
+
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+table {
+    border-radius: 5px;
+}
+
+input{
+    border-radius: 5px;
+    border-width: 1px;
+    padding-left:5px;
+}
+
+select{
+    border-radius: 5px;
+}
+
+thead {
+    background-color: #33363b;
+    font-size: 12px;
+    color: azure;
+}
+
